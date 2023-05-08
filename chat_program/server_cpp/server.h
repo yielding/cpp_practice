@@ -21,8 +21,9 @@ class Server {
 
         void error_handling(const char* msg);
 
-        void connect_to_client(int serv_sock, fd_set reads, int& fd_max, char nicknames[][BUFSIZE], char* all_nicknames, char* message);
+        void send_all(int fd, char* send_message);
 
+        void connect_to_client(int serv_sock, fd_set reads, int& fd_max, char nicknames[][BUFSIZE], char* all_nicknames, char* message);
 
         void run();
 };

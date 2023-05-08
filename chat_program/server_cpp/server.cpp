@@ -19,7 +19,7 @@ Server::Server(int port) {
     int str_len;
     struct timeval timeout;
     fd_set reads, temps;
-    char nicknames[10][BUFSIZE] = {""}; //최대 10명의 닉네임 저장
+    char nicknames[10][BUFSIZE] = {'\0'}; //최대 10명의 닉네임 저장
     char all_nicknames[BUFSIZE*10] = "현재 참여자 : ";
     char send_message[BUFSIZE] = "";
     int fd_max;
@@ -61,6 +61,7 @@ void Server::error_handling(const char* msg) {
 void Server::connect_to_client(int serv_sock, fd_set reads, int& fd_max, char nicknames[][BUFSIZE], char* all_nicknames, char* send_message){
     char message[BUFSIZE];
     struct timeval timeout;
+
     while (1) {
         int fd, str_len;
         int clnt_sock, clnt_len;
@@ -121,7 +122,7 @@ void Server::connect_to_client(int serv_sock, fd_set reads, int& fd_max, char ni
                             strcpy(nicknames[fd], message);
                             strcat(all_nicknames, nicknames[fd]);
                             strcat(all_nicknames, " ");
-                            write(fd, all_nicknames, sizeof(all_nicknames));
+                            write(fd, all_nicknames, BUFSIZE);
 
                             send_message[0] = '\0';
                             strcat(send_message, nicknames[fd]);
