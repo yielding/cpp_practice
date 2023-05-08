@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <sys/select.h>
 #include <time.h>
+#include "client.h"
 #define BUFSIZE 1024
 #define SCHEDULE 3
 
@@ -16,10 +17,9 @@ int main(int argc, char *argv[]){
         cout << "Usage: " << argv[0] << " <IP> <port> <nickname>" << endl;
         exit(1);
     }
-
     
-    //Client client(argv[1], atoi(argv[2]), argv[3]);
-    //client.run();
+    Client client(argv[1], atoi(argv[2]), argv[3]);
+    client.run();
 
     return 0;
 }

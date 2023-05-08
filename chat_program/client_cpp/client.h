@@ -18,7 +18,7 @@ private:
     struct timeval timeout ;
     fd_set reads, temps;
     char buffer[BUFSIZE];
-    char my_nickname[1024];
+    char my_nickname[BUFSIZE];
     
     void error_handling(const char* msg);
     
