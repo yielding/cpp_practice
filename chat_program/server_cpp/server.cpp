@@ -1,4 +1,3 @@
-#include "server.h"
 #include <iostream>
 #include <netinet/in.h>
 #include <cstring>
@@ -8,27 +7,30 @@
 #include <sys/socket.h>
 #include <sys/select.h>
 #include <time.h>
+#include "server.h"
 
 #define BUFSIZE 1024
 
 using namespace std;
 
-void Server::error_handling(const char* msg) {
-    cerr << msg << endl;
-    exit(1);
-}
-
-void Server::connect_to_client(int port) {
+Server::Server(int port) {
+    int serv_sock;
     struct sockaddr_in serv_addr;
-
-    memset(&serv_addr, 0, sizeof(serv_addr));
     int str_len;
     struct timeval timeout;
+    fd_set reads, temps;
+    char nicknames[10][BUFSIZE] = {""}; //최대 10명의 닉네임 저장
+    char all_nicknames[BUFSIZE*10] = "현재 참여자 : ";
+    char send_message[BUFSIZE] = "";
+    int fd_max;
 
-    // socket 만들기
-    int serv_sock = socket(PF_INET, SOCK_STREAM, 0);
+    serv_sock = socket(PF_INET, SOCK_STREAM, 0);
+    if(serv_sock == -1){
+        error_handling("socket() error");
+    }
 
     // server의 주소 만들기
+    memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     serv_addr.sin_port = htons(port);
@@ -47,30 +49,24 @@ void Server::connect_to_client(int port) {
     FD_ZERO(&reads);
     FD_SET(serv_sock, &reads);
     fd_max = serv_sock;
+
+    connect_to_client(serv_sock, reads, fd_max, nicknames, all_nicknames, send_message);
 }
 
-void Server::send_all(int fd, char* send_message){
-    for (fd = 0; fd < fd_max+1; fd++){
-        if (strcmp(nicknames[fd], "") != 0) {
-            write (fd, send_message, BUFSIZE);
-        }
-    }
+void Server::error_handling(const char* msg) {
+    cerr << msg << endl;
+    exit(1);
 }
 
-Server::Server(int port) {
-    connect_to_client(port);
-}
-
-void Server::run() {
+void Server::connect_to_client(int serv_sock, fd_set reads, int& fd_max, char nicknames[][BUFSIZE], char* all_nicknames, char* send_message){
     char message[BUFSIZE];
     struct timeval timeout;
-
     while (1) {
         int fd, str_len;
         int clnt_sock, clnt_len;
         struct sockaddr_in clnt_addr;
 
-        temps = reads;
+        fd_set temps = reads;
         timeout.tv_sec = 5;
         timeout.tv_usec = 0;
 
@@ -91,14 +87,14 @@ void Server::run() {
                     // 이때 새 client 발견했다면
                     if (fd_max < clnt_sock)
                         fd_max=clnt_sock;
-                } 
+                }
                 // 2) fd가 serv_sock이 아니다 => 클라이언트가 메세지 보낸다
                 else {
                     message[0] = '\0';
-                    printf("%d", fd);
-                    printf("%d", serv_sock);
                     str_len = read(fd, message, BUFSIZE);
                     if(str_len == -1){
+                        // 에러 발생 시 해당 소켓을 집합에서 제거
+                        FD_CLR(fd, &reads);
                         error_handling("read() error");
                     }
                     message[str_len] = '\0' ;
@@ -113,8 +109,12 @@ void Server::run() {
                         strcat(send_message, " (이)가 채팅방을 떠났습니다.\n");
                         printf("%s", send_message);
                         //모두에게 출력
-                        send_all(fd, send_message);
-                    // 2-2) len이 0이 아니다 => 메세지 보냈다
+                        for (fd = 0; fd < fd_max+1; fd++){
+                            if (strcmp(nicknames[fd], "") != 0) {
+                                write (fd, send_message, BUFSIZE);
+                            }
+                        }
+                        // 2-2) len이 0이 아니다 => 메세지 보냈다
                     } else {
                         //아직 닉네임이 설정되지 않음 (닉네임이 옴)
                         if (strcmp(nicknames[fd], "") == 0) {
@@ -128,7 +128,11 @@ void Server::run() {
                             strcat(send_message, " (이)가 채팅방에 들어왔습니다.\n");
                             printf("%s", send_message);
                             //모두에게 출력
-                            send_all(fd, send_message);
+                            for (fd = 0; fd < fd_max+1; fd++){
+                                if (strcmp(nicknames[fd], "") != 0) {
+                                    write (fd, send_message, BUFSIZE);
+                                }
+                            }
                         }
                         //닉네임이 설정되고 또 옴 (메세지가 옴)
                         else{
@@ -140,11 +144,18 @@ void Server::run() {
                             strcat(send_message, message);
                             printf("%s", send_message);
                             //모두에게 출력
-                            send_all(fd, send_message);
+                            for (fd = 0; fd < fd_max+1; fd++){
+                                if (strcmp(nicknames[fd], "") != 0) {
+                                    write (fd, send_message, BUFSIZE);
+                                }
+                            }
                         }
                     }
                 }
             } //if(FD_ISSET(fd, &temps))
         } //for(fd=0; fd<fd_max+1; fd++)
     } //while(1)
+}
+
+void Server::run() {
 }
