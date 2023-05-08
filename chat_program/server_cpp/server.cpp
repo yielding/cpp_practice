@@ -157,6 +157,3 @@ void Server::connect_to_client(int serv_sock, fd_set reads, int& fd_max, char ni
         } //for(fd=0; fd<fd_max+1; fd++)
     } //while(1)
 }
-
-void Server::run() {
-}
