@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <sys/select.h>
 #include <time.h>
+
 #define BUFSIZE 1024
 #define SCHEDULE 3
 
@@ -13,7 +14,7 @@ class Client {
 private:
     int sock;
     int send_cnt;
-    int valread;
+    int valread; //변수 선언
     struct sockaddr_in serv_addr;
     struct timeval timeout ;
     fd_set reads, temps;
