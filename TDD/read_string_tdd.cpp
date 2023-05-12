@@ -33,11 +33,17 @@ int main() {
     size_t read_size = 5;
     string result;
     
+    // test 1
     read_string(buffer, offset, length, read_size, result);
-    
-    // 결과 출력
-    cout << "Offset: " << offset << endl;
-    cout << "Result: " << result << endl;
+    assert(offset == 5 && result == "Hello");
+
+    // test 2
+    read_string(buffer, offset, length, read_size, result);
+    assert(offset == 10 && result == ", Wor");
+
+    // test 3
+    read_string(buffer, offset, length, read_size, result);
+    assert(offset == 13 && result == "ld!");
     
     return 0;
 }
