@@ -25,18 +25,17 @@ auto Client::pump_packet_to_string(auto m_sock, auto to_read) -> bool
 
 // 함수의 test case 먼저 정의
 TEST(Pump_Packet_to_Striing_Test, NegativeToread) {
-    EXPECT_TRUE(pump_packet_to_string(2));
-    EXPECT_FALSE(pump_packet_to_string(3));
+    EXPECT_FALSE(pump_packet_to_string(&m_sock, 0));
+    EXPECT_FALSE(pump_packet_to_string(&m_sock, -1));
 }
 
 TEST(Pump_Packet_to_Striing_Test, EmptyMsocket) {
-    EXPECT_TRUE(pump_packet_to_string(2));
-    EXPECT_FALSE(pump_packet_to_string(3));
+    EXPECT_FALSE(pump_packet_to_string(NULL, to_read));
 }
 
 TEST(Pump_Packet_to_Striing_Test, Positive) {
-    EXPECT_TRUE(pump_packet_to_string(2));
-    EXPECT_FALSE(pump_packet_to_string(3));
+    EXPECT_TRUE(pump_packet_to_string(&m_sock, 1024));
+    EXPECT_TRUE(pump_packet_to_string(&m_sock, 16));
 }
 
 // 테스트
