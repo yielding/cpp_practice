@@ -36,6 +36,8 @@ private:
 
     auto handle_server_input() -> bool;
 
+    auto pump_packet_to_string(auto m_sock, auto to_read) -> bool
+
 private:
     int m_sock;
     bool m_connected;

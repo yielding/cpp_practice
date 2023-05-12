@@ -36,7 +36,7 @@ namespace
 ///
 ////////////////////////////////////////////////////////////////////////////////
 Client::Client(string const& ip, int port, string nickname) 
-    : {-1}, m_ip{ip}, m_port{port}, m_nickname{nickname}
+    : m_sock{-1}, m_ip{ip}, m_port{port}, m_nickname{nickname}
     , m_connected{false}
 {
 }
@@ -60,6 +60,7 @@ bool Client::prepare_chat()
 
     return true;
 }
+
 auto Client::connect_to_server(string const& ip, int port) -> bool
 {
     try
@@ -113,10 +114,8 @@ auto Client::receive_all_nickname() -> strings
         return result;
 
     // buffer에, offset을 뒤로 이동시켜가며, m_sock에서 read하는 함수
-    if (pump_packet_to_string(&m_sock, to_read))
+    if (buffer = pump_packet_to_string(&m_sock, to_read))
         return result;
-
-    buffer[offset] = 0;
 
     string all_nicks(buffer, offset);
 
