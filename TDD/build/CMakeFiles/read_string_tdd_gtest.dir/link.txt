@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/read_string_tdd_gtest.dir/read_string_tdd_gtest.cpp.o -o read_string_tdd_gtest  lib/libgtest_main.a lib/libgtest.a 
