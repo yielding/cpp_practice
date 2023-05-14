@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/usr/local/include -I/opt/homebrew/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review -std=gnu++2b -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/client.dir/client.cpp.o -c /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/client.cpp",
+  "file": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/client.cpp",
+  "output": "CMakeFiles/client.dir/client.cpp.o"
+},
+{
+  "directory": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/usr/local/include -I/opt/homebrew/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review -std=gnu++2b -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/client.dir/main.cpp.o -c /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/main.cpp",
+  "file": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/main.cpp",
+  "output": "CMakeFiles/client.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/usr/local/include -I/opt/homebrew/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review -std=gnu++2b -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/pump_packet.dir/pump_packet.cpp.o -c /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/pump_packet.cpp",
+  "file": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/pump_packet.cpp",
+  "output": "CMakeFiles/pump_packet.dir/pump_packet.cpp.o"
+},
+{
+  "directory": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-build/googlemock",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/usr/local/include -I/opt/homebrew/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/include -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest -std=c++2b -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-build/googlemock",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/usr/local/include -I/opt/homebrew/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock/include -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/include -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest -std=c++2b -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-build/googletest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/usr/local/include -I/opt/homebrew/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest -std=c++2b -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-build/googletest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/usr/local/include -I/opt/homebrew/include -I/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/include -isystem /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest -std=c++2b -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]

@@ -1,0 +1,6 @@
+# CMake generated Testfile for 
+# Source directory: /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-src/googletest
+# Build directory: /Users/kimminchae/Desktop/cpp_practice_kim/cpp_practice/chat_program/client_cpp_review/build/_deps/googletest-build/googletest
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
