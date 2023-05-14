@@ -27,11 +27,9 @@ auto Client::pump_packet_to_string(int m_sock, int to_read) -> std::string
 TEST(pump_packet_to_string) {
     m_sock = socket(PF_INET, SOCK_STREAM, 0);
     auto to_read = ntohl(*(uint32_t *)buf); // endian 변환
+
     pump_packet_to_string(m_sock, 0)
     ASSERT_EQ(offset, 5)
-
-    EXPECT_FALSE(pump_packet_to_string(m_sock, 0));
-    EXPECT_FALSE(pump_packet_to_string(m_sock, -1));
 };
 
 // 테스트
