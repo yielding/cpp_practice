@@ -7,39 +7,32 @@ template <typename T> // type 자유롭게 쓸 수 있는 템플릿
 class Queue
 {
     public:
-        auto push(const T& element) -> bool // 템플릿의 요소 주솟값으로 받아옴
+        auto push(const T& element) -> bool // 템플릿의 요소 주솟값(주소 -> 참조)으로 받아옴
         {   
-            elements.push_back(element);
+            elements.push_back(element); // 참조로 받아왔으나 push_back에서 결국 복사됨
             return true;
         }
 
         auto pop() -> bool
         {   
-            if(elements.size() != 0)
-            {
-                elements.pop_front();
-                return true;
-            }
-            else
+            if (elements.size() == 0)
                 throw out_of_range("Error in pop : size is 0");
             
-            return false;
+            elements.pop_front();
+            return true;
         }
 
         auto front() -> T
         {   
-            if(elements.size() != 0)
+            if (elements.size() != 0)
                 return elements.front();
-            else
-                throw out_of_range("Error in top : size is 0");
+           
+            throw out_of_range("Error in top : size is 0");
         }
 
         auto empty() -> bool
         {   
-            if(elements.size() == 0)
-                return true;
-            else
-                return false;
+            return elements.size() == 0;
         }
 
     private:
